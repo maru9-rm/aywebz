@@ -1,0 +1,5 @@
+%h1 HOME画面だよ
+- if can?  :update, current_user
+  %h1 update
+- if can? :read, current_user
+  %h1 read
