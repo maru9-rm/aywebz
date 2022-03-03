@@ -28,7 +28,7 @@ class User < ApplicationRecord
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
     if login = conditions.delete(:login)
-      where(conditions).where(["username = :value", { :value => username }]).first
+      where(conditions).where(['username = :value', { :value => username }]).first
     else
       where(conditions).first
     end
@@ -46,5 +46,4 @@ class User < ApplicationRecord
     false
   end
 
-  
 end
