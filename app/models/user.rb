@@ -24,6 +24,13 @@ class User < ApplicationRecord
   validates_uniqueness_of :username
   validates_presence_of :username
 
+  has_one :profile
+
+  def prepare_profile
+    profile || build_profile
+  end
+
+
   # nameを利用してログイン
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup

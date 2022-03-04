@@ -19,10 +19,11 @@
         %span.navbar-toggler-icon
       #navbarNav.collapse.navbar-collapse
         %ul.navbar-nav
+
           %li.nav-item
-            %a.nav-link.active{"aria-current" => "page", :href => "#"} Home
+            = link_to 'Home', root_path , class: "nav-link"
           %li.nav-item
-            %a.nav-link{:href => "#"} Features
+            = link_to 'Profile', profile_path , class: "nav-link"
           %li.nav-item
-            %a.nav-link{:href => "#"} Pricing
+            %a.nav-link{:href => "#"} Communication
     = yield
