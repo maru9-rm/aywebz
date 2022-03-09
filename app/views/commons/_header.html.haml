@@ -1,0 +1,13 @@
+%nav.navbar.navbar-expand-lg.navbar-light.bg-light.d-flex.justify-content-around
+    %h1.mx-5.font-weight-bold TestWebSite
+    #navbarNav.collapse.navbar-collapse
+        %ul.navbar-nav
+            %li.nav-item
+                = link_to 'Home', root_path , class: "nav-link"
+            %li.nav-item
+                = link_to 'Profile', profile_path , class: "nav-link"
+            %li.nav-item
+                = link_to 'Communication', comms_path , class: "nav-link"
+            - if can?  :update, current_user
+                %li.nav-item
+                    = link_to 'Notification', admin_notifications_path , class: "nav-link"

@@ -1,17 +1,16 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :ユーザーネーム
-    %br/
-    = f.text_field :username, autofocus: true, autocomplete: "username"
-  .field
-    = f.label :パスワード
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "users/shared/links"
+.login
+  .container
+    .login-page
+      .login-page-title
+        DARKPLAYGROUND
+      .login-page-description
+        web service for ayz members
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .field.login-page-form
+          = f.label :user, class:"login-page-form-label"
+          = f.text_field :username, autofocus: true, autocomplete: "username", class:"login-page-form-field"
+        .field.login-page-form
+          = f.label :pass, class:"login-page-form-label"
+          = f.password_field :password, autocomplete: "current-password", class:"login-page-form-field"
+        .actions.pt-5
+          = f.submit "ENTER", class: "btn btn-outline-dark btn-lg login-page-btn"

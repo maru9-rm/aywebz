@@ -1,24 +1,24 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "users/shared/error_messages", resource: resource
-  .field
-    = f.label :ユーザーネーム
-    %br/
-    = f.text_field :username, autofocus: true, autocomplete: "username"
-  .field
-    = f.label :パスワード
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :パスワード再入力
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .field
-    = f.check_box :admin
-    = f.label :admin
-  .actions
-    = f.submit "Sign up"
-= render "users/shared/links"
+.login
+  .container
+    .login-page
+      .login-page-title
+        DARKPLAYGROUND
+      .login-page-description
+        管理者用新規ユーザー登録画面
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = render "users/shared/error_messages", resource: resource
+        .field.login-page-form
+          = f.label :user, class:"login-page-form-label"
+          = f.text_field :username, autofocus: true, autocomplete: "username", class:"login-page-form-field"
+        .field.login-page-form
+          = f.label :pass, class:"login-page-form-label"
+          = f.password_field :password, autocomplete: "new-password", class:"login-page-form-field"
+        .field.login-page-form
+          = f.label :確認, class:"login-page-form-label"
+          = f.password_field :password_confirmation, autocomplete: "new-password", class:"login-page-form-field"
+        .field.login-page-form.pt-5
+          = f.check_box :admin
+          = f.label :管理者権限を付与する
+        .actions.pt-5
+          = f.submit "Sign Up", class: "btn btn-outline-dark btn-lg login-page-btn mb-1"
+      = render "users/shared/links"

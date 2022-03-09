@@ -10,7 +10,8 @@ class Ability
     if user.admin?
       can :manage,  :all
     else
-      cannot :read , :notification
+      cannot :read, :notification
+      cannot :new, :user
     end
 
     # Define abilities for the passed in user here. For example:
