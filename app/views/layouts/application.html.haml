@@ -11,10 +11,8 @@
     %meta{:content => "width=device-width, initial-scale=1, shrink-to-fit=no", :name => "viewport"}/
 
   %body
-    - flash.each do |key, value|
-      = content_tag(:div, value, class: "#{key}")
     %nav.navbar.navbar-expand-lg.navbar-light.bg-light.d-flex.justify-content-around
-      %a.font-weight-bold{:href => "#"} AYwebZ
+      %h1.mx-5.font-weight-bold TestWebSite
       %button.navbar-toggler{"aria-controls" => "navbarNav", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-bs-target" => "#navbarNav", "data-bs-toggle" => "collapse", :type => "button"}
         %span.navbar-toggler-icon
       #navbarNav.collapse.navbar-collapse
@@ -25,5 +23,12 @@
           %li.nav-item
             = link_to 'Profile', profile_path , class: "nav-link"
           %li.nav-item
-            %a.nav-link{:href => "#"} Communication
+            = link_to 'Communication', comms_path , class: "nav-link"
+          - if can?  :update, current_user
+            %li.nav-item
+              = link_to 'Notification', admin_notifications_path , class: "nav-link"
     = yield
+    %footer
+      .container
+        - flash.each do |key, value|
+          = content_tag(:div, value, class: "#{key}")

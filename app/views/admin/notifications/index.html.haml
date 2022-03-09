@@ -1,0 +1,11 @@
+.container
+    %h1.pb-5 index
+
+    - @notifications.each do |notification|
+        %h1
+            #{notification.title} by #{notification.user.profile.nickname}
+
+        %h2.p-3.pb-5
+            = notification.content
+
+    = link_to "新しいお知らせを作る", new_admin_notification_path

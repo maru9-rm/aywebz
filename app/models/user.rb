@@ -25,9 +25,18 @@ class User < ApplicationRecord
   validates_presence_of :username
 
   has_one :profile
+  has_many :notifications, dependent: :destroy
 
   def prepare_profile
     profile || build_profile
+  end
+
+  def avatar_image
+    if profile&.avatar&.attached?
+      profile.avatar
+    else
+      'default-avatar.png'
+    end
   end
 
 

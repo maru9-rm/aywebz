@@ -2,14 +2,14 @@
     %h1 Profile
 
     .h1.text-center
-        = current_user.profile&.nickname
+        = current_user&.profile&.nickname
     .h2.text-center
-        学年：#{current_user.profile&.grade}
+        学年：#{current_user&.profile&.grade}
     .h2.text-center
-        志望校：#{current_user.profile&.path}
+        志望校：#{current_user&.profile&.path}
 
 
-    =image_tag current_user.profile&.avatar , class: "w-100"
+    =image_tag current_user.avatar_image , class: "w-100"
 
     = link_to edit_profile_path do
         %button.btn.btn-primary.btn-lg
