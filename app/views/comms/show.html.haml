@@ -1,0 +1,14 @@
+.container
+
+    %h1.pb-5 Commuication
+
+    %h2.pb-3 NEWS
+    - @notifications.each do |notification|
+        %div
+            %h3  #{notification.title} by #{notification.user.profile.nickname}                
+            %h4.p-3.pb-4= notification.content
+
+
+
+
+    %h2 CHAT

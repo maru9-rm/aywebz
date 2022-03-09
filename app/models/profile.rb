@@ -27,4 +27,7 @@ class Profile < ApplicationRecord
     
         return "中学#{years - 12}年生"
     end
+
+
+
 end
