@@ -13,6 +13,7 @@
   %body
     = yield
     %footer
-      .container
-        - flash.each do |key, value|
-          = content_tag(:div, value, class: "#{key}")
+      - if flash.present?
+        .flash
+          - flash.each do |key, value|
+            %div{:class => key}= value

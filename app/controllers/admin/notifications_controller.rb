@@ -2,7 +2,7 @@ class Admin::NotificationsController < Admin::ApplicationController
     load_and_authorize_resource
     
     def index
-        @notifications = Notification.all
+        @notifications = Notification.all.order(id: :DESC)
     end
 
 
@@ -13,10 +13,10 @@ class Admin::NotificationsController < Admin::ApplicationController
     def create
         @notification = current_user.notifications.build(notification_params)
         if @notification.save
-          redirect_to admin_notifications_path, notice: '保存完了しました'
+          redirect_to admin_notifications_path, notice: 'Saved in successfully.'
         # notice: でフラッシュメッセージにテキスト(ハッシュ)を持たせてリクエストを送ることができる。
         else
-          flash.now[:error] = '保存に失敗しました'
+          flash.now[:error] = 'Failed to save. Please check the error message.'
           render :new
           # この場合はレンダーなので、URLにリクエストを送るわけではないため、その場ですぐフラッシュを表示させるためにflash.nowで！
         end
