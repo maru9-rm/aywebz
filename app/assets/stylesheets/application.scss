@@ -1,5 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "flash";
+
 
 a {
     color: black;
@@ -12,22 +14,6 @@ a {
 .center {
     text-align: center;
 }
-
-
-
-// ############################################
-//                フッター
-// ############################################
-
-footer {
-    width: 100%;
-    text-align: center;
-    position: absolute;
-    bottom: 30px;
-    font-size: 30px;
-    color: darkred;
-}
-
 
 
 // ############################################
