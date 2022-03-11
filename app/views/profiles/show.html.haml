@@ -1,18 +1,26 @@
 = render 'commons/header'
 
-.container.center
-    %h1 Profile
+.container.text-center
+    %h1.section-title.text-center Profile
 
-    .h1.text-center
-        = current_user&.profile&.nickname
-    .h2.text-center
-        学年：#{current_user&.profile&.grade}
-    .h2.text-center
-        志望校：#{current_user&.profile&.path}
-
-
-    =image_tag current_user.avatar_image , class: "w-100"
-
+    .profile-content
+        =image_tag current_user.avatar_image, class: "profile-content-image"
+        .profile-content-text-wrapper
+            .profile-content-text
+                .profile-content-text-label
+                    名前
+                .profile-content-text-value
+                    = current_user&.profile&.nickname
+            .profile-content-text
+                .profile-content-text-label
+                    学年
+                .profile-content-text-value
+                    = current_user&.profile&.grade
+            .profile-content-text
+                .profile-content-text-label
+                    志望校
+                .profile-content-text-value
+                    = current_user&.profile&.path
     = link_to edit_profile_path do
-        %button.btn.btn-primary.btn-lg
+        %button.btn.btn-outline-dark.btn-lg.profile-edit-btn
             EDIT

@@ -1,7 +1,9 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "flash";
-
+@import "header";
+@import "profile";
+@import 'variables';
 
 a {
     color: black;
@@ -15,6 +17,12 @@ a {
     text-align: center;
 }
 
+.section-title {
+    color: $base-color;
+    margin-top: 60px;
+    margin-bottom: 45px;
+    font-size: 50px;
+}
 
 // ############################################
 //                ログインページ 
@@ -25,7 +33,7 @@ a {
 .login-page {
     text-align: center;
 
-    &-title {
+    &-title {    
         margin-top: 190px;
         font-size: 50px;
         font-weight: bold;
