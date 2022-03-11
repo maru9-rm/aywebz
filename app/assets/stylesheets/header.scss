@@ -1,0 +1,12 @@
+@import "variables";
+
+.header {
+    background-color: $base-color;
+}
+
+.header-title {
+    margin: 0 30px;
+    line-height: 50px;
+    margin-bottom: 0;
+    font-size: 35px;
+}
