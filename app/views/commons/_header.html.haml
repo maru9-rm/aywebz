@@ -1,5 +1,5 @@
-%nav.header.navbar-dark.d-flex.justify-content-between.flex-lg-row.flex-md-row.flex-column
-    %h1.font-weight-bold.text-white.header-title.text-sm-center AYZWEBSCHOOL
+%nav.header.navbar-dark.d-flex.justify-content-around.flex-lg-row.flex-md-row.flex-column
+    %h1.font-weight-bold.text-white.header-title.text-sm-center HYPERWEBSITE
     .d-flex.justify-content-end.justify-content-sm-center
         %ul.navbar-nav.text-right.mx-3.d-flex.flex-row.mt-0
             %li.nav-item.mx-2
@@ -11,5 +11,7 @@
             - if can?  :update, current_user
                 %li.nav-item.mx-2
                     = link_to 'Notification', admin_notifications_path , class: "nav-link"
+                %li.nav-item.mx-2
+                    = link_to 'usercreate', new_user_registration_path , class: "nav-link"
             %li.nav-item.mx-2
                 = link_to 'Logout', destroy_user_session_path, data: { method: 'delete' }, class: "nav-link" 
