@@ -5,7 +5,7 @@
 
     - @notifications.each do |notification|
         %h1
-            #{notification.title} by #{notification.user.profile.nickname}
+            #{notification.title} by #{notification.user.displayname}
 
         %h2.p-3.pb-5
             = notification.content

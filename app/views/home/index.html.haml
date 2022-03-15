@@ -7,3 +7,14 @@
     %h1 update
   - if can? :read, current_user
     %h1 read
+
+
+  %h2.pb-3 NEWS
+  - @notifications.each do |notification|
+    %div
+      %h3  #{notification.title} by #{notification.user.displayname}                
+      %h4.p-3.pb-4= notification.content
+
+
+
+
