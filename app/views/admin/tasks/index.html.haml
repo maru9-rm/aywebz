@@ -1,0 +1,30 @@
+= render 'commons/header'
+.container.text-center
+    %h1.section-title.text-center index
+
+    %table.table-design
+        %tr
+            %th 生徒名
+            -@tasks.each do |task|
+                %th
+                    =task.testday
+                    %br
+                    =task.source
+                    %br
+                    =task.detail
+                    %br
+                    =task.title
+                    %br
+                    =task.criterion
+        %tr
+            %td 山田太郎
+            %td 済
+            %td 済
+        %tr 
+            %td 東野圭吾
+            %td 済
+            %td 済
+    
+    =link_to new_admin_task_path do
+        %button.btn.btn-outline-dark.btn-lg.login-page-btn.mb-1
+            課題を作る

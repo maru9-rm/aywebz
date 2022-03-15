@@ -1,0 +1,26 @@
+= render 'commons/header'
+
+.container
+    %h1.section-title.text-center Retest Progress
+
+    %table.table-design
+        %tr
+            %th Title
+            %th Date
+            %th Subject
+            %th Textbook
+            %th Page
+        -@tasks.each do |task|
+            %tr
+                %td 
+                    =task.title 
+                %td 
+                    =task.testday.strftime('%m/%d')
+                %td 
+                    =task.subject
+                %td 
+                    =task.source
+                %td 
+                    =task.detail
+
+

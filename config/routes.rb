@@ -4,10 +4,11 @@ Rails.application.routes.draw do
 
   resource :profile
 
-  resource :comms
+  resource :retest
 
   namespace :admin do
     resources :notifications
+    resources :tasks
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

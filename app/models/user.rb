@@ -27,6 +27,9 @@ class User < ApplicationRecord
   has_one :profile
   has_many :notifications, dependent: :destroy
 
+  has_many :tasks
+  has_many :achievements
+
   def prepare_profile
     profile || build_profile
   end
@@ -36,6 +39,14 @@ class User < ApplicationRecord
       profile.avatar
     else
       'default-avatar.png'
+    end
+  end
+
+  def displayname
+    if profile&.nickname.nil?
+      username
+    else
+      profile.nickname
     end
   end
 

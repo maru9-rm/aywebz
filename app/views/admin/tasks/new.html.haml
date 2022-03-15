@@ -1,0 +1,26 @@
+= render 'commons/header'
+.container
+    %h1.section-title.text-center new
+
+    = form_with(model: @task, url: admin_tasks_path, local: true) do |f|
+        .field
+            = f.label :testday, '実施日', class:""
+            = f.date_field :testday, class:""
+        .field
+            = f.label :subject, '科目名', class:""
+            = f.select :subject, Task.subjects.map { |k, v| [ I18n.t("enum.subjects.#{k}"), k ] }, {}, { class: 'text' }        
+        .field
+            = f.label :source, 'テキスト名', class:""
+            = f.text_field :source, class:""
+        .field
+            = f.label :detail,'ページ数', class:""
+            = f.text_field :detail, class:""
+        .field
+            = f.label :title,'内容', class:""
+            = f.text_field :title, class:""
+        .field
+            = f.label :criterion,'合格基準', class:""
+            = f.text_field :criterion, class:""
+
+        .actions.pt-5
+            = f.submit "create new retest", class: "btn btn-outline-dark btn-lg login-page-btn mb-1"
