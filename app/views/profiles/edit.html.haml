@@ -14,8 +14,8 @@
       = f.label :nickname, 'ニックネーム', class: 'profile-content-text-label text-center'
       = f.text_field :nickname, class: 'profile-content-text-value'
     .profile-content-text
-      = f.label :birthday, '生年月日', class: 'profile-content-text-label text-center'
-      = f.date_field :birthday, class: 'profile-content-text-value'
+      = f.label :grade, '学年', class: 'profile-content-text-label text-center'
+      = f.select :grade, Profile.grades.map { |k, v| [ I18n.t("enum.grades.#{k}"), k ] }, {}, { class: 'profile-content-text-value' }
     .profile-content-text
       = f.label :path, '志望校', class: 'profile-content-text-label text-center'
       = f.text_field :path, class: 'profile-content-text-value'

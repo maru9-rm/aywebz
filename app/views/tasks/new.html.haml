@@ -2,7 +2,10 @@
 .container
     %h1.section-title.text-center new
 
-    = form_with(model: @task, url: admin_tasks_path, local: true) do |f|
+    = form_with(model: @task, url: tasks_path, local: true) do |f|
+        .field
+            = f.label :grade, '学年', class:""
+            = f.select :grade, Task.grades.map { |k, v| [ I18n.t("enum.grades.#{k}"), k ] }, {}, { class: '' }        
         .field
             = f.label :testday, '実施日', class:""
             = f.date_field :testday, class:""

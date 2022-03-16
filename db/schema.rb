@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 2022_03_14_235516) do
     t.bigint "user_id", null: false
     t.string "nickname"
     t.string "path"
-    t.date "birthday"
+    t.integer "grade"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_profiles_on_user_id"
@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 2022_03_14_235516) do
 
   create_table "tasks", force: :cascade do |t|
     t.bigint "user_id", null: false
+    t.integer "grade", null: false
     t.string "title", null: false
     t.string "source"
     t.string "detail"

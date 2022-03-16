@@ -1,7 +1,9 @@
 class CreateTasks < ActiveRecord::Migration[6.0]
   def change
     create_table :tasks do |t|
-      t.references :user, null: false 
+      t.references :user, null: false
+      # 学年 
+      t.integer :grade, null: false
       # 科目名
       t.string :title, null: false 
       # テキスト名やプリント名

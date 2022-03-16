@@ -5,6 +5,7 @@
 #  id         :bigint           not null, primary key
 #  criterion  :string
 #  detail     :string
+#  grade      :integer          not null
 #  passday    :date
 #  source     :string
 #  status     :integer          default(0), not null

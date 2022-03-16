@@ -3,7 +3,7 @@
 # Table name: profiles
 #
 #  id         :bigint           not null, primary key
-#  birthday   :date
+#  grade      :integer
 #  nickname   :string
 #  path       :string
 #  created_at :datetime         not null

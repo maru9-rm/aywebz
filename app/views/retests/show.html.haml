@@ -1,7 +1,7 @@
 = render 'commons/header'
 
 .container
-    %h1.section-title.text-center Retest Progress
+    %h1.section-title.text-center Task Progress
 
     %table.table-design
         %tr
@@ -10,6 +10,7 @@
             %th Subject
             %th Textbook
             %th Page
+            %th Status
         -@tasks.each do |task|
             %tr
                 %td 
@@ -17,10 +18,14 @@
                 %td 
                     =task.testday.strftime('%m/%d')
                 %td 
-                    =task.subject
+                    = I18n.t("enum.subjects.#{task.subject}")
                 %td 
                     =task.source
                 %td 
                     =task.detail
-
+                %td
+                    -if task.achievements.exists?(user_id: current_user)
+                        済
+                    -else
+                        未
 
