@@ -6,9 +6,13 @@ Rails.application.routes.draw do
 
   resource :retest
 
+  resources :tasks do
+    resource :achievement
+  end
+  
   namespace :admin do
     resources :notifications
-    resources :tasks
+
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -1,4 +1,4 @@
-class Admin::TasksController < Admin::ApplicationController
+class TasksController < Admin::ApplicationController
     load_and_authorize_resource
 
     def index
@@ -12,7 +12,7 @@ class Admin::TasksController < Admin::ApplicationController
     def create
         @task = current_user.tasks.build(task_params)
         if @task.save
-          redirect_to admin_tasks_path, notice: 'Saved in successfully.'
+          redirect_to tasks_path, notice: 'Saved in successfully.'
         # notice: でフラッシュメッセージにテキスト(ハッシュ)を持たせてリクエストを送ることができる。
         else
           flash.now[:error] = 'Failed to save. Please check the error message.'
@@ -24,7 +24,7 @@ class Admin::TasksController < Admin::ApplicationController
     private
 
     def task_params
-      params.require(:task).permit(:testday, :subject, :title, :source, :detail, :criterion).merge(user_id: current_user.id)
+      params.require(:task).permit(:grade, :testday, :subject, :title, :source, :detail, :criterion).merge(user_id: current_user.id)
     end
 
 end

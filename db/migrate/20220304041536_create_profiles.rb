@@ -4,7 +4,8 @@ class CreateProfiles < ActiveRecord::Migration[6.0]
       t.references :user, null: false
       t.string :nickname
       t.string :path
-      t.date :birthday
+      t.integer :grade
+      # t.date :birthday
       t.timestamps
     end
   end
