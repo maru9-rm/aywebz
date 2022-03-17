@@ -23,11 +23,11 @@ axios.defaults.headers.common['X-CSRF-Token'] = csrfToken()
 
 
 
-document.addEventListener('DOMContentLoaded', () => {
-    $('.section-title').on('click', () => {
-          axios.get('/')
-        .then((response) => {
-            window.alert('これはテストです。');
-        })
-      })
-  })
+// document.addEventListener('DOMContentLoaded', () => {
+//     $('.section-title').on('click', () => {
+//           axios.get('/')
+//         .then((response) => {
+//             window.alert('これはテストです。');
+//         })
+//       })
+//   })
