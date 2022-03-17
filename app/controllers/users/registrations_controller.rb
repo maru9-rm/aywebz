@@ -5,9 +5,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
   before_action :creatable?, only: [:new, :create]
 
   # GET /resource/sign_up
-  # def new
-  #   super
-  # end
+  def new
+    users = User.eager_load(:profile)
+    @first_grade_users = users.where(profiles: {grade: 3})
+    @second_grade_users = users.where(profiles: {grade: 4})
+    @third_grade_users = users.where(profiles: {grade: 5})
+    super
+  end
 
   # POST /resource
   # def create
@@ -39,7 +43,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   protected
-
 
   def current_user_is_admin?
     user_signed_in? && current_user.admin?
