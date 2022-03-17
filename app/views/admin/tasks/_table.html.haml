@@ -1,0 +1,44 @@
+%table.table-design.mb-5
+    %tr
+        %th
+            生徒名
+            -# 実施日 実際はこっち。sns用にダミーを出すのでコメントアウト
+            -# %br
+            -# テキスト名
+            -# %br
+            -# ページ数
+            -# %br
+            -# 内容
+            -# %br
+            -# 期限
+        -tasks.each do |task|
+            %th
+                -# =task.testday.strftime('%m/%d')
+                -# %br
+                -# =task.source
+                -# %br
+                -# =task.detail
+                -# %br
+                =task.title
+                -# %br
+                -# =task.criterion
+    -users.each do |user|
+        %tr
+            %td
+                =user.displayname
+            -tasks.each do |task|
+                %td
+                    -if task.achievements.exists?(user_id: user)        
+                        = link_to admin_task_achievement_path(task_id: task, user_id: user), data: { method: 'delete' } do
+                            %button.btn-ok 済
+                    -else
+                        = link_to admin_task_achievement_path(task_id: task, user_id: user) ,data: { method: 'post' } do
+                            %button.btn-yet 未
+
+    %tr
+        %td
+        -tasks.each do |task|            
+            %td 
+                %button.btn.btn-outline-dark EDIT
+
+
