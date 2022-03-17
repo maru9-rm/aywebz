@@ -1,29 +1,29 @@
 = render 'commons/header'
-.container
-    %h1.section-title.text-center new
+.container.text-center
+    %h1.section-title new
 
     = form_with(model: @task, url: admin_tasks_path, local: true) do |f|
         .field
-            = f.label :grade, '学年', class:""
-            = f.select :grade, Task.grades.map { |k, v| [ I18n.t("enum.grades.#{k}"), k ] }, {}, { class: '' }        
+            = f.label :grade, '学年', class:"profile-content-text-label text-center"
+            = f.select :grade, Task.grades.map { |k, v| [ I18n.t("enum.grades.#{k}"), k ] }, {}, { class: 'profile-content-text-value' }        
         .field
-            = f.label :testday, '実施日', class:""
-            = f.date_field :testday, class:"task-form"
+            = f.label :testday, '実施日', class:"profile-content-text-label text-center"
+            = f.date_field :testday, class:"profile-content-text-value"
         .field
-            = f.label :subject, '科目名', class:""
-            = f.select :subject, Task.subjects.map { |k, v| [ I18n.t("enum.subjects.#{k}"), k ] }, {}, { class: 'text' }        
+            = f.label :subject, '科目名', class:"profile-content-text-label text-center"
+            = f.select :subject, Task.subjects.map { |k, v| [ I18n.t("enum.subjects.#{k}"), k ] }, {}, { class: 'profile-content-text-value' }        
         .field
-            = f.label :source, 'テキスト名', class:""
-            = f.text_field :source, class:""
+            = f.label :source, 'テキスト名', class:"profile-content-text-label text-center"
+            = f.text_field :source, class:"profile-content-text-value"
         .field
-            = f.label :detail,'ページ数', class:""
-            = f.text_field :detail, class:""
+            = f.label :detail,'ページ数', class:"profile-content-text-label text-center"
+            = f.text_field :detail, class:"profile-content-text-value"
         .field
-            = f.label :title,'内容', class:""
-            = f.text_field :title, class:""
+            = f.label :title,'内容', class:"profile-content-text-label text-center"
+            = f.text_field :title, class:"profile-content-text-value"
         .field
-            = f.label :criterion,'合格基準', class:""
-            = f.text_field :criterion, class:""
+            = f.label :criterion,'合格基準', class:"profile-content-text-label text-center"
+            = f.text_field :criterion, class:"profile-content-text-value"
 
         .actions.pt-5
-            = f.submit "create new retest", class: "btn btn-outline-dark btn-lg login-page-btn mb-1"
+            = f.submit "create new retest", class: "btn btn-outline-dark btn-lg profile-edit-btn"

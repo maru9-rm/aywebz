@@ -30,10 +30,10 @@
                 %td
                     -if task.achievements.exists?(user_id: user)        
                         = link_to admin_task_achievement_path(task_id: task, user_id: user), data: { method: 'delete', confirm: "達成状態を【未】に変更します。"} do
-                            %button.btn-ok 済
+                            %button.btn.btn-primary.btn-sm 済
                     -else
                         = link_to admin_task_achievement_path(task_id: task, user_id: user) ,data: { method: 'post' } do
-                            %button.btn-yet 未
+                            %button.btn.btn-danger.btn-sm 未
 
     %tr
         %td
