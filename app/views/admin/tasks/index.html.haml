@@ -1,0 +1,14 @@
+= render 'commons/header'
+.container.text-center
+    %h1.section-title.text-center 課題管理表
+    %h2.text-left ■中１
+    =render 'table', tasks: @first_grade_tasks, users: @first_grade_users
+    %h2.text-left ■中２
+    =render 'table', tasks: @second_grade_tasks, users: @second_grade_users
+    %h2.text-left ■中３
+    =render 'table', tasks: @third_grade_tasks, users: @third_grade_users
+
+    
+    =link_to new_admin_task_path do
+        %button.btn.btn-outline-dark.btn-lg.login-page-btn.mb-5.w-100
+            新しい課題を作る
