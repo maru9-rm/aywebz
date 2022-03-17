@@ -7,9 +7,9 @@
       %li= message
 
   = form_with(model: @profile, url: profile_path, method: 'put', local: true) do |f|
-    .profile-content-text
-      = f.label :avatar, 'アバター', class: 'profile-content-text-label text-center'
-      = f.file_field :avatar, class: 'profile-content-text-value'
+    -# .profile-content-text
+    -#   = f.label :avatar, 'アバター', class: 'profile-content-text-label text-center'
+    -#   = f.file_field :avatar, class: 'profile-content-text-value'
     .profile-content-text
       = f.label :nickname, 'ニックネーム', class: 'profile-content-text-label text-center'
       = f.text_field :nickname, class: 'profile-content-text-value'
