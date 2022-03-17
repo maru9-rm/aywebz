@@ -4,9 +4,7 @@
   .container
     .login-page
       .section-title
-        管理者用新規ユーザー登録画面
-      .login-page-description
-        ※新しいユーザーの作成は管理者しか行えません。
+        新規生徒登録
       = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
         = render "users/shared/error_messages", resource: resource
         .field.login-page-form
@@ -22,4 +20,45 @@
           = f.check_box :admin
           = f.label :管理者権限を付与する
         .actions.pt-5
-          = f.submit "Sign Up", class: "btn btn-outline-dark btn-lg login-page-btn mb-1"
+          = f.submit "Create", class: "btn btn-outline-dark btn-lg login-page-btn mb-1"
+
+.container
+  %h1.section-title.text-center 生徒一覧
+
+  %table.table-design.mb-5
+    %tr
+      %th 名前
+      %th 学年
+      %th 志望校
+      %th 達成数
+      -@first_grade_users.each do |user|
+        %tr
+          %td 
+            =user.displayname
+          %td
+            = I18n.t("enum.grades.#{user&.profile&.grade}")
+          %td
+            =user.profile.path
+          %td
+            =user.achievements.count
+      -@second_grade_users.each do |user|
+        %tr
+          %td 
+            =user.displayname
+          %td
+            = I18n.t("enum.grades.#{user&.profile&.grade}")
+          %td
+            =user.profile.path
+          %td
+            =user.achievements.count
+
+      -@third_grade_users.each do |user|
+        %tr
+          %td 
+            =user.displayname
+          %td
+            = I18n.t("enum.grades.#{user&.profile&.grade}")
+          %td
+            =user.profile.path
+          %td
+            =user.achievements.count
