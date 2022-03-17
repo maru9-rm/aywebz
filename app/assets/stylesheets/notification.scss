@@ -1,0 +1,25 @@
+.notification-wrapper {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px 1px 0px #778ca3;
+    
+    
+}
+
+.notification-title {
+    font-size: 15px;
+    padding-left: 2px;
+}
+
+.notification-info {
+    font-size: 15px;
+    padding-right: 2px;
+}
+
+.notification-content {
+    text-align: left;
+    padding: 15px;
+    margin-bottom: 45px;
+
+}

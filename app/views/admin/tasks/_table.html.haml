@@ -29,7 +29,7 @@
             -tasks.each do |task|
                 %td
                     -if task.achievements.exists?(user_id: user)        
-                        = link_to admin_task_achievement_path(task_id: task, user_id: user), data: { method: 'delete' } do
+                        = link_to admin_task_achievement_path(task_id: task, user_id: user), data: { method: 'delete', confirm: "達成状態を【未】に変更します。"} do
                             %button.btn-ok 済
                     -else
                         = link_to admin_task_achievement_path(task_id: task, user_id: user) ,data: { method: 'post' } do
@@ -39,6 +39,7 @@
         %td
         -tasks.each do |task|            
             %td 
-                %button.btn.btn-outline-dark EDIT
+                =link_to edit_admin_task_path(task) do
+                    %button.btn.btn-outline-dark EDIT
 
 

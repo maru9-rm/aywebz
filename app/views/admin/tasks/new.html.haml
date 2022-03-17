@@ -8,7 +8,7 @@
             = f.select :grade, Task.grades.map { |k, v| [ I18n.t("enum.grades.#{k}"), k ] }, {}, { class: '' }        
         .field
             = f.label :testday, '実施日', class:""
-            = f.date_field :testday, class:""
+            = f.date_field :testday, class:"task-form"
         .field
             = f.label :subject, '科目名', class:""
             = f.select :subject, Task.subjects.map { |k, v| [ I18n.t("enum.subjects.#{k}"), k ] }, {}, { class: 'text' }        

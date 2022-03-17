@@ -1,18 +1,21 @@
 = render 'commons/header'
 
-.container
+.container.text-center
+
+  %h1.section-title.text-center お知らせ作成
+
   %ul
     - @notification.errors.full_messages.each do |message|
       %li= message
   = form_with(model: @notification, url: admin_notifications_path, local: true) do |f|
     %div
-      = f.label :title, 'タイトル'
+      %p= f.label :title, 'タイトル'
     %div
-      = f.text_field :title, class: 'text'
+      = f.text_field :title, class: 'w-50 mb-5 profile-content-text-value'
     %div
-      = f.label :content, '内容'
+      %p= f.label :content, '内容'
     %div
-      = f.text_area :content
-    = f.submit '保存', class: 'btn-primary'
+      = f.text_area :content, class: 'w-50 profile-content-text-value'
+    = f.submit '保存', class: 'btn btn-outline-dark btn-lg profile-edit-btn'
 
   = link_to "キャンセル", admin_notifications_path

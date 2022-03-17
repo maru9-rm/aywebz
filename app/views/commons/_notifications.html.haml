@@ -1,0 +1,5 @@
+- notifications.each do |notification|
+    %div.notification-wrapper
+        .notification-title  #{notification.title}  
+        .notification-info  #{notification.created_at.strftime('%Y年%m月%d日 %H:%M')}  #{notification.user.displayname}
+    %h4.notification-content= notification.content

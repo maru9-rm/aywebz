@@ -2,18 +2,9 @@
 
 .container
 
-  %h1.section-title.text-center Home
-  - if can?  :update, current_user
-    %h1 update
-  - if can? :read, current_user
-    %h1 read
+  %h1.section-title.text-center News
 
-
-  %h2.pb-3 NEWS
-  - @notifications.each do |notification|
-    %div
-      %h3  #{notification.title} by #{notification.user.displayname}                
-      %h4.p-3.pb-4= notification.content
+  = render 'commons/notifications', notifications: @notifications
 
 
 

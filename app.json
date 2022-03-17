@@ -1,0 +1,16 @@
+{
+    "name": "hyperwebsite",
+    "description": "the website for the hyper students",
+    "keywords": [],
+    "website": "",
+    "repository": "https://github.com/maru9-rm/aywebz",
+    "env": {},
+    "addons": [
+      "heroku-postgresql:hobby-dev"
+    ],
+    "buildpacks": [{
+      "url": "heroku/nodejs"
+    }, {
+      "url": "heroku/ruby"
+    }]
+  }
