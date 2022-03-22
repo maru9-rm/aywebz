@@ -21,7 +21,30 @@ class Admin::NotificationsController < Admin::ApplicationController
           # この場合はレンダーなので、URLにリクエストを送るわけではないため、その場ですぐフラッシュを表示させるためにflash.nowで！
         end
     end
+
+    def edit
+      @notification = current_user.notifications.find(params[:id])
+    end
+  
+    def update
+      @notification = current_user.notifications.find(params[:id])
+      if @notification.update(notification_params)
+        redirect_to root_path, notice: '更新できました'
+      else
+        flash.now[:error] = '更新できませんでした'
+        render :edit
+      end
+    end
+  
     
+
+    def destroy
+      notification = current_user.notifications.find(params[:id])
+      notification.destroy!
+      redirect_to root_path, notice: '削除に成功しました'
+
+    end 
+
 
     private
 

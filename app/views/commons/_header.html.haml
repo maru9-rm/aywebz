@@ -1,6 +1,6 @@
 %nav.header.navbar-dark.d-flex.justify-content-around.flex-lg-row.flex-md-row.flex-column
-    %h1.font-weight-bold.text-white.header-title.text-sm-center ayzMEMBERSweb
-    .d-flex.justify-content-end.justify-content-sm-center
+    %h1.font-weight-bold.text-white.header-title.text-center.text-lg-left HYPERWEBSITE
+    .d-flex.justify-content-end.justify-content-center
         %ul.navbar-nav.text-right.mx-3.d-flex.flex-row.mt-0.header-flex
             %li.nav-item.mx-2
                 = link_to 'Home', root_path , class: "nav-link"
@@ -9,7 +9,6 @@
             %li.nav-item.mx-2
                 = link_to 'Task', retest_path, class: "nav-link"
             - if can?  :update, current_user 
-                %li " "
                 %li.nav-item.mx-2
                     = link_to 'お知らせ', admin_notifications_path , class: "nav-link"
                 %li.nav-item.mx-2

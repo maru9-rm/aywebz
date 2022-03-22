@@ -15,7 +15,7 @@
                 .profile-content-text-label
                     学年
                 .profile-content-text-value
-                    = I18n.t("enum.grades.#{current_user&.profile&.grade}")
+                    = I18n.t("enum.grades.#{current_user&.profile&.grade || 'unknown'}")
             .profile-content-text
                 .profile-content-text-label
                     志望校

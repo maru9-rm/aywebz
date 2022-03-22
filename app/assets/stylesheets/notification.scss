@@ -10,11 +10,13 @@
 .notification-title {
     font-size: 15px;
     padding-left: 2px;
+    height: 25px;
 }
 
 .notification-info {
     font-size: 15px;
     padding-right: 2px;
+    height: 25px;
 }
 
 .notification-content {
@@ -22,4 +24,16 @@
     padding: 15px;
     margin-bottom: 45px;
 
+}
+
+.notification-form {
+    width: 390px;
+    font-size: 20px;
+    height: 46px;
+
+}
+
+.large-form {
+    height: 200px;
+    
 }

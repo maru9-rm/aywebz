@@ -1,0 +1,22 @@
+= render 'commons/header'
+
+.container.text-center
+
+  %h1.section-title.text-center お知らせ編集
+
+  %ul
+    - @notification.errors.full_messages.each do |message|
+      %li= message
+  = form_with(model: @notification, url: admin_notification_path, local: true) do |f|
+    %div
+      %p= f.label :title, 'タイトル'
+    %div
+      = f.text_field :title, class: 'mb-5 notification-form'
+    %div
+      %p= f.label :content, '内容'
+    %div
+      = f.text_area :content, class: 'notification-form large-form'
+    = f.submit '保存', class: 'btn btn-outline-dark btn-lg profile-edit-btn mb-2'
+
+    = link_to admin_notification_path, data: { method: 'delete', confirm: "本当に削除しますか？"} do
+      %button.btn.btn-outline-dark.btn-lg.profile-edit-btn 削除する
