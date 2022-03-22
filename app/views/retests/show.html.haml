@@ -1,16 +1,16 @@
 = render 'commons/header'
 
 .container
-    %h1.section-title.text-center Task Progress
+    %h1.section-title.text-center Task
 
     %table.table-design
         %tr
-            %th Title
-            %th Date
-            %th Subject
-            %th Textbook
-            %th Page
-            %th Status
+            %th 内容
+            %th 実施日
+            %th 科目
+            %th テキスト名
+            %th ページ
+            %th 状態
         -@tasks.each do |task|
             %tr
                 %td 

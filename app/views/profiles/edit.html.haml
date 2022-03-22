@@ -11,14 +11,14 @@
     -#   = f.label :avatar, 'アバター', class: 'profile-content-text-label text-center'
     -#   = f.file_field :avatar, class: 'profile-content-text-value'
     .profile-content-text
-      = f.label :nickname, 'ニックネーム', class: 'profile-content-text-label text-center'
-      = f.text_field :nickname, class: 'profile-content-text-value'
+      = f.label :nickname, '名前', class: 'profile-content-text-label text-center'
+      = f.text_field :nickname, class: 'profile-content-text-form'
     .profile-content-text
       = f.label :grade, '学年', class: 'profile-content-text-label text-center'
-      = f.select :grade, Profile.grades.map { |k, v| [ I18n.t("enum.grades.#{k}"), k ] }, {}, { class: 'profile-content-text-value' }
+      = f.select :grade, Profile.grades.map { |k, v| [ I18n.t("enum.grades.#{k}"), k ] }, {}, { class: 'profile-content-text-form' }
     .profile-content-text
       = f.label :path, '志望校', class: 'profile-content-text-label text-center'
-      = f.text_field :path, class: 'profile-content-text-value'
+      = f.text_field :path, class: 'profile-content-text-form'
 
 
     = f.submit '保存', class: 'btn btn-outline-dark btn-lg profile-edit-btn'

@@ -11,6 +11,11 @@
     visibility: hidden;
     z-index: 1;
     animation-duration: 3s;
+    text-shadow: 
+    -2px 2px 2px #fff,
+    -2px -2px 2px #fff,
+    2px 2px 2px #fff,
+    2px -2px 2px #fff;
   }
   
   @-webkit-keyframes fade-in-out {
