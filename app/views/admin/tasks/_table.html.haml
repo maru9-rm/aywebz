@@ -1,27 +1,30 @@
 %table.table-design.mb-5
     %tr
         %th
-            生徒名
-            -# 実施日 実際はこっち。sns用にダミーを出すのでコメントアウト
-            -# %br
-            -# テキスト名
-            -# %br
-            -# ページ数
-            -# %br
-            -# 内容
-            -# %br
-            -# 期限
+            実施日
+            %br
+            科目
+            %br
+            テキスト名
+            %br
+            ページ数
+            %br
+            内容
+            %br
+            合格基準
         -tasks.each do |task|
             %th
-                -# =task.testday.strftime('%m/%d')
-                -# %br
-                -# =task.source
-                -# %br
-                -# =task.detail
-                -# %br
+                =task.testday.strftime('%m/%d')
+                %br
+                = I18n.t("enum.subjects.#{task.subject}")
+                %br
+                =task.source
+                %br
+                =task.detail
+                %br
                 =task.title
-                -# %br
-                -# =task.criterion
+                %br
+                =task.criterion
     -users.each do |user|
         %tr
             %td
