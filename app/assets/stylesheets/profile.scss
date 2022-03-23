@@ -14,7 +14,8 @@
             font-size: 15px;
             font-weight: bold;
             line-height: 45px;
-            width: 100px;
+            width: 30%;
+            min-width: 70px;
             background-color:#778ca3;
             color: white;
         }
@@ -26,7 +27,8 @@
         }
 
         &-form {
-            width: 390px;
+            max-width: 390px;
+            width: 100%;
             font-size: 30px;
             height: 46px;
         }
