@@ -8,11 +8,11 @@
     - @notification.errors.full_messages.each do |message|
       %li= message
   = form_with(model: @notification, url: admin_notification_path, local: true) do |f|
-    %div
+    .notification-title
       %p= f.label :title, 'タイトル'
     %div
       = f.text_field :title, class: 'mb-5 notification-form'
-    %div
+    .notification-title
       %p= f.label :content, '内容'
     %div
       = f.text_area :content, class: 'notification-form large-form'
