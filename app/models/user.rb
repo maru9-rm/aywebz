@@ -50,6 +50,10 @@ class User < ApplicationRecord
     end
   end
 
+  def has_achievement?(task)
+    achievements.exists?(task_id: task.id)
+  end
+
 
 
 

@@ -30,13 +30,18 @@
             %td
                 =user.displayname
             -tasks.each do |task|
-                %td
-                    -if task.achievements.exists?(user_id: user)        
-                        = link_to admin_task_achievement_path(task_id: task, user_id: user), data: { method: 'delete', confirm: "達成状態を【未】に変更します。"} do
-                            %button.btn.btn-primary.btn-sm 済
-                    -else
-                        = link_to admin_task_achievement_path(task_id: task, user_id: user) ,data: { method: 'post' } do
-                            %button.btn.btn-danger.btn-sm 未
+                %td.task-show{data: {task_id: task.id, user_id: user.id}}
+                    .achievement-status.hidden.status-ok{id: "status-ok#{user.id}-#{task.id}", data: {task_id: task.id, user_id: user.id}}
+                        %button.btn.btn-primary.btn-sm 済
+                    .achievement-status.hidden.status-yet{id: "status-yet#{user.id}-#{task.id}", data: {task_id: task.id, user_id: user.id}}
+                        %button.btn.btn-danger.btn-sm 未
+                    -# -if task.achievements.exists?(user_id: user)        
+                    -#     = link_to admin_task_achievement_path(task_id: task, user_id: user), data: { method: 'delete', confirm: "達成状態を【未】に変更します。"} do
+                    -#         %button.btn.btn-primary.btn-sm 済
+                    -# -else
+                    -#     = link_to admin_task_achievement_path(task_id: task, user_id: user) ,data: { method: 'post' } do
+                    -#         %button.btn.btn-danger.btn-sm 未
+                    -# jqueryで状態を取得・変更するようにしたためここは不要になった
 
     %tr
         %td
@@ -44,5 +49,10 @@
             %td 
                 =link_to edit_admin_task_path(task) do
                     %button.btn.btn-outline-dark EDIT
+
+
+
+
+
 
 
