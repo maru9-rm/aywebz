@@ -16,4 +16,6 @@
 class Achievement < ApplicationRecord
     belongs_to :user
     belongs_to :task
+
+    permit_params :user_id, task_id
 end
